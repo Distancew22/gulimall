@@ -4,12 +4,29 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    alicloud:
+      access-key: LTAI5t9A4dfMdkhFgX4Kpx2H
+      secret-key: Ms7I24BUivYMyW2upfQsuUvvc3qoWV
+      oss:
+        endpoint: oss-cn-guangzhou.aliyuncs.com
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
   global-config:
     db-config:
       id-type: auto # 自增主键
+        #逻辑删除
+      logic-delete-value: 1
+      logic-not-delete-value: 0
 
 server:
   port: 12000
+
+logging:
+  level:
+    com.oyyy.gulimall: debug
+
