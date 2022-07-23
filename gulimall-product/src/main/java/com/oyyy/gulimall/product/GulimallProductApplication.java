@@ -3,6 +3,7 @@ package com.oyyy.gulimall.product;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
@@ -25,6 +26,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  *  2）、配置逻辑删除的组件Bean（省略）
  *  3）、给Bean加上逻辑删除注解@TableLogic
  */
+@EnableCaching
 @EnableFeignClients(basePackages ="com.oyyy.gulimall.product.feign" )
 @EnableDiscoveryClient
 @MapperScan("com.oyyy.gulimall.product.dao")
